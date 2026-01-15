@@ -13,7 +13,15 @@ Example 1:
 Input: flowerbed = [1,0,0,0,1], n = 1
 Output: true
 
+
 SOLUTION :
+//Algorithm
+Create a new array with a 0 prepended and appended to the original flowerbed.
+Iterate through the padded array from index 1 to length-2 (the original positions).
+For each position, check if the current cell and both neighbors are empty (all zeros).
+If so, plant a flower by setting the current cell to 1, and decrement n.
+After processing all positions, return true if n is 0 or less (we placed enough flowers).
+//program:
 class Solution {
     public boolean canPlaceFlowers(int[] flowerbed, int n) {
         int m = flowerbed.length;
